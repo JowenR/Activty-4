@@ -48,7 +48,6 @@ footer{margin-top:28px; text-align:center; color:var(--muted); font-size:14px}
   <main class="wrap">
     <header>
       <div class="logo">
-        <!-- Replace src with your logo or hero image -->
         <img src="Images/coffee.jpg" alt="coffee logo">
       </div>
       <div>
@@ -58,7 +57,7 @@ footer{margin-top:28px; text-align:center; color:var(--muted); font-size:14px}
     </header><!-- HERO / INTRO -->
 <section class="card hero" id="intro">
   <figure>
-    <!-- Hero image: replace the URL with your preferred image -->
+
     <img class="section-image" src="Images/Welcome.png" alt="morning coffee on a wooden table">
   </figure>
   <div>
@@ -155,12 +154,10 @@ footer{margin-top:28px; text-align:center; color:var(--muted); font-size:14px}
           update();
         }));
 
-        // Optional: keyboard support
         container.addEventListener('keydown', (e) => {
           if (e.key === 'ArrowLeft') prev.click();
           if (e.key === 'ArrowRight') next.click();
         });
-        // Make container focusable for keyboard
         container.tabIndex = 0;
 
         // Initialize
