@@ -1,0 +1,251 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Life Brewed Better — Find balance, one cup at a time.</title>
+  <meta name="description" content="A coffee & lifestyle site about mindful coffee rituals, wellness, and the art of living fully—one cup at a time.">
+  <style>
+    :root{
+      --bg:#faf8f5; --card:#ffffff; --accent:#3d2b00; --muted:#556; --maxw:960px;
+      --radius:12px; --pad:24px;
+    }
+    html,body{height:100%;}
+    body{
+      margin:0; padding:40px 16px; font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg); color:#222; -webkit-font-smoothing:antialiased;
+      line-height:1.5;
+      display:flex; justify-content:center;
+    }
+    .wrap{max-width:var(--maxw); width:100%;}
+    header{display:flex; align-items:center; gap:16px; margin-bottom:28px}
+    .logo{display:flex; gap:12px; align-items:center}
+    .logo img{width:64px; height:64px; border-radius:10px; object-fit:cover;}
+    h1{font-size:28px; margin:0; color:var(--accent); font-weight:700}
+    .tag{font-size:14px; color:var(--muted)}.card{background:var(--card); border-radius:var(--radius); padding:var(--pad); box-shadow:0 6px 20px rgba(30,30,30,0.06); margin-bottom:20px}
+.hero{display:grid; grid-template-columns:1fr; gap:20px}
+
+figure{margin:0 0 12px 0}
+img.section-image{width:100%; height:260px; object-fit:cover; border-radius:10px; display:block}
+h2{margin:8px 0 12px 0; font-size:20px; color:#1b3b2a}
+p{margin:0 0 12px 0; color:#222}
+ul{margin:0 0 12px 0; padding-left:20px}
+li{margin-bottom:6px}
+
+two-col{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+@media (max-width:760px){
+  .two-col{grid-template-columns:1fr}
+  img.section-image{height:200px}
+  header{flex-direction:column; align-items:flex-start}
+  .logo img{width:56px; height:56px}
+}
+
+footer{margin-top:28px; text-align:center; color:var(--muted); font-size:14px}
+.muted{color:var(--muted)}
+.cta{display:inline-block; margin-top:12px; padding:10px 16px; background:var(--accent); color:white; border-radius:10px; text-decoration:none}
+
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="logo">
+        <img src="Images/coffee.jpg" alt="coffee logo">
+      </div>
+      <div>
+        <h1>Life Brewed Better</h1>
+        <div class="tag">Find balance, one cup at a time.</div>
+      <div>
+    </header><!-- HERO / INTRO -->
+<section class="card hero" id="intro">
+  <figure>
+
+    <img class="section-image" src="Images/Welcome.png" alt="morning coffee on a wooden table">
+  </figure>
+  <div>
+    <h2>Welcome to Life Brewed Better</h2>
+    <p>Welcome to <strong>Life Brewed Better</strong>, a space where coffee becomes more than a drink — it becomes a daily ritual of comfort, clarity, and mindful living. Here, each cup invites you [...]  
+    <p>Whether you're enjoying your first morning brew or unwinding with a quiet evening cup, we’re here to help you create a lifestyle rooted in warmth, balance, and intention.</p>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="card" id="philosophy">
+  <figure>
+    <img class="section-image" src="Images/Coffee morning.jpg" alt="coffee and a peaceful morning scene">
+  </figure>
+  <h2>The Coffee Lifestyle Philosophy</h2>
+  <p><em>Life moves fast — but your coffee doesn’t have to.</em></p>
+  <p>We believe in brewing with purpose, living with awareness, and turning ordinary moments into grounding rituals. Coffee becomes a companion to your thoughts, your routines, and your personal growt[...]  
+  <ul>
+    <li>The calming rhythm of slow coffee moments</li>
+    <li>Daily habits that bring clarity and ease</li>
+    <li>How the simple act of brewing can support mindfulness</li>
+    <li>The connection between wellness and your favorite cup</li>
+  </ul>
+</section>
+
+<!-- WELLNESS -->
+<section class="card" id="wellness">
+  <figure>
+    <div class="wellness-carousel carousel">
+      <div class="slides">
+        <img class="carousel-image" src="Images/1.jpg" alt="Wellness image 1">
+        <img class="carousel-image" src="Images/2.jpg" alt="Wellness image 2">
+        <img class="carousel-image" src="Images/3.jpg" alt="Wellness image 3">
+        <img class="carousel-image" src="Images/4.jpg" alt="Wellness image 4">
+      </div>
+
+      <!-- navigation -->
+      <button class="carousel-btn prev" aria-label="Previous slide">&#9664;</button>
+      <button class="carousel-btn next" aria-label="Next slide">&#9654;</button>
+
+      <!-- indicators -->
+      <div class="dots" role="tablist" aria-label="Slide indicators">
+        <button class="dot" data-index="0" aria-label="Slide 1"></button>
+        <button class="dot" data-index="1" aria-label="Slide 2"></button>
+        <button class="dot" data-index="2" aria-label="Slide 3"></button>
+        <button class="dot" data-index="3" aria-label="Slide 4"></button>
+        <button class="dot" data-index="4" aria-label="Slide 5"></button>
+      </div>
+    </div>
+
+    <style>
+      .wellness-carousel { position:relative; border-radius:12px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.12); }
+      .wellness-carousel .slides { display:flex; transition:transform .45s ease; will-change:transform; }
+      .wellness-carousel .slides img.carousel-image { width:100%; flex:0 0 100%; height:260px; object-fit:cover; display:block; border-radius:12px; }
+      .wellness-carousel .carousel-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.95); border:0; width:44px; height:44px; border-radius:50%; display:flex; [...]  
+      .wellness-carousel .carousel-btn.prev { left:12px; }
+      .wellness-carousel .carousel-btn.next { right:12px; }
+      .wellness-carousel .carousel-btn:focus { outline:2px solid rgba(30,86,49,0.2); }
+      .wellness-carousel .dots { position:absolute; left:50%; transform:translateX(-50%); bottom:12px; display:flex; gap:8px; }
+      .wellness-carousel .dot { width:10px; height:10px; border-radius:50%; border:0; background:rgba(255,255,255,0.7); cursor:pointer; padding:0; }
+      .wellness-carousel .dot.active { background:var(--accent); box-shadow:0 3px 8px rgba(0,0,0,0.18); }
+      @media (max-width:760px){
+        .wellness-carousel .slides img.carousel-image { height:200px; }
+        .wellness-carousel .carousel-btn { width:36px; height:36px; }
+      }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const container = document.querySelector('.wellness-carousel');
+        if (!container) return;
+        const slidesWrap = container.querySelector('.slides');
+        const slides = container.querySelectorAll('.slides img');
+        const prev = container.querySelector('.carousel-btn.prev');
+        const next = container.querySelector('.carousel-btn.next');
+        const dots = Array.from(container.querySelectorAll('.dot'));
+        let index = 0;
+
+        function update() {
+          slidesWrap.style.transform = 'translateX(' + (-index * 100) + '%)';
+          dots.forEach((d, i) => d.classList.toggle('active', i === index));
+        }
+
+        prev.addEventListener('click', () => {
+          index = (index - 1 + slides.length) % slides.length;
+          update();
+        });
+        next.addEventListener('click', () => {
+          index = (index + 1) % slides.length;
+          update();
+        });
+        dots.forEach(d => d.addEventListener('click', (e) => {
+          index = Number(e.currentTarget.dataset.index) || 0;
+          update();
+        }));
+
+        container.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') prev.click();
+          if (e.key === 'ArrowRight') next.click();
+        });
+        container.tabIndex = 0;
+
+        // Initialize
+        update();
+      });
+    </script>
+  </figure>
+  <h2>Wellness Through Coffee</h2>
+  <p>Coffee has a powerful influence on your body and mind. In this section, we dive deep into how your brew can support:</p>
+  <ul>
+    <li><strong>Better focus and energy</strong> — gentle strategies for timing and portions</li>
+    <li><strong>Balanced mood</strong> — how ritual and sensory pleasure influence emotions</li>
+    <li><strong>Gentle routines that reduce stress</strong> — micro-habits to slow the day</li>
+    <li><strong>A healthier approach to productivity</strong> — tips for sustainable energy</li>
+  </ul>
+  <p>From understanding the science of caffeine to creating rituals that help you feel more centered, we guide you toward a healthier, more intentional relationship with coffee.</p>
+</section>
+
+<!-- RITUALS -->
+<section class="card" id="rituals">
+  <figure>
+    <img class="section-image" src="Images/warm.jpg" alt="hands holding a warm cup of coffee in a cozy setting">
+  </figure>
+  <h2>Rituals for a Mindful Day</h2>
+  <p>Discover meaningful ways to make coffee part of your personal wellness practice:</p>
+  <div class="two-col">
+    <div>
+      <h3>Morning grounding ritual</h3>
+      <p>Start your day with a few minutes of quiet and a warm cup. Notice the steam, the aroma, and the first sip.</p>
+
+      <h3>Midday reset moments</h3>
+      <p>Pause, breathe, and brew with purpose — a short ritual that restores focus and calm.</p>
+    </div>
+    <div>
+      <h3>Evening slow-down</h3>
+      <p>Choose low-caffeine or decaf options to create a gentle transition toward rest.</p>
+
+      <h3>Savoring techniques</h3>
+      <p>Take time to taste more deeply: note acidity, body, sweetness, and aftertaste as a mindful exercise.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORIES -->
+<section class="card" id="stories">
+  <figure>
+    <img class="section-image" src="Images/quote.png" alt="open journal and coffee on a table">
+  </figure>
+  <h2>Stories, Insights & Daily Inspirations</h2>
+  <p>Find reflections, lifestyle essays, and thoughtful pieces that explore the deeper meaning of everyday coffee moments.</p>
+  <ul>
+    <li>The comfort of familiar brews</li>
+    <li>The beauty of slow mornings</li>
+    <li>How simple rituals shape emotional well-being</li>
+    <li>Personal journeys of people who rediscovered life through mindful living</li>
+  </ul>
+  <p>This is your space for gentle inspiration, warmth, and introspection.</p>
+</section>
+
+<!-- COMMUNITY -->
+<section class="card" id="community">
+  <figure>
+    <img class="section-image" src="Images/group.jpg" alt="people enjoying coffee together in a cafe">
+  </figure>
+  <h2>Coffee, Community & Connection</h2>
+  <p>Coffee brings people together — in conversations, shared tables, and quiet companionship. Here, we celebrate:</p>
+  <ul>
+    <li>Heartwarming stories from coffee lovers</li>
+    <li>The role of cafés as modern community spaces</li>
+    <li>How coffee creates bonds and memories</li>
+  </ul>
+  <p>Coffee is personal, but it’s also communal — and both matter.</p>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="card" id="start">
+  <figure>
+    <img class="section-image" src="Images/sky.jpg" alt="a steaming cup of coffee with sunlight">
+  </figure>
+  <h2>Start Your Journey</h2>
+  <p>Let your daily cup inspire a slower, richer, more mindful way of living. Explore the warmth, the stories, and the moments that help you <strong>live fully — one sip at a time.</strong></p>
+  <a class="cta" href="#intro">BEGIN WITH RITUAL</a>
+</section>
+
+<footer>
+  <div class="muted">© <span id="year">2025</span> Life Brewed Better — Find balance, one cup at a time.</div>
+</footer>
+
+  </main>
+</body>
+</html>
