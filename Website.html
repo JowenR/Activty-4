@@ -49,7 +49,7 @@ footer{margin-top:28px; text-align:center; color:var(--muted); font-size:14px}
     <header>
       <div class="logo">
         <!-- Replace src with your logo or hero image -->
-        <img src="https://source.unsplash.com/160x160/?coffee,beans" alt="coffee logo">
+        <img src="coffee.jpg" alt="coffee logo">
       </div>
       <div>
         <h1>Life Brewed Better</h1>
@@ -87,7 +87,89 @@ footer{margin-top:28px; text-align:center; color:var(--muted); font-size:14px}
 <!-- WELLNESS -->
 <section class="card" id="wellness">
   <figure>
-    <img class="section-image" src="https://source.unsplash.com/1200x600/?coffee,health,focus" alt="cup of coffee next to a notebook and glasses">
+    <!-- Wellness carousel: replace the src values with your 5 images -->
+    <div class="wellness-carousel carousel">
+      <div class="slides">
+        <img class="carousel-image" src="replace-with-your-image-1.jpg" alt="Wellness image 1">
+        <img class="carousel-image" src="replace-with-your-image-2.jpg" alt="Wellness image 2">
+        <img class="carousel-image" src="replace-with-your-image-3.jpg" alt="Wellness image 3">
+        <img class="carousel-image" src="replace-with-your-image-4.jpg" alt="Wellness image 4">
+        <img class="carousel-image" src="replace-with-your-image-5.jpg" alt="Wellness image 5">
+      </div>
+
+      <!-- navigation -->
+      <button class="carousel-btn prev" aria-label="Previous slide">&#9664;</button>
+      <button class="carousel-btn next" aria-label="Next slide">&#9654;</button>
+
+      <!-- indicators -->
+      <div class="dots" role="tablist" aria-label="Slide indicators">
+        <button class="dot" data-index="0" aria-label="Slide 1"></button>
+        <button class="dot" data-index="1" aria-label="Slide 2"></button>
+        <button class="dot" data-index="2" aria-label="Slide 3"></button>
+        <button class="dot" data-index="3" aria-label="Slide 4"></button>
+        <button class="dot" data-index="4" aria-label="Slide 5"></button>
+      </div>
+    </div>
+
+    <style>
+      /* Scoped carousel styles */
+      .wellness-carousel { position:relative; border-radius:12px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.12); }
+      .wellness-carousel .slides { display:flex; transition:transform .45s ease; will-change:transform; }
+      .wellness-carousel .slides img.carousel-image { width:100%; flex:0 0 100%; height:260px; object-fit:cover; display:block; border-radius:12px; }
+      .wellness-carousel .carousel-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.95); border:0; width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.12); }
+      .wellness-carousel .carousel-btn.prev { left:12px; }
+      .wellness-carousel .carousel-btn.next { right:12px; }
+      .wellness-carousel .carousel-btn:focus { outline:2px solid rgba(30,86,49,0.2); }
+      .wellness-carousel .dots { position:absolute; left:50%; transform:translateX(-50%); bottom:12px; display:flex; gap:8px; }
+      .wellness-carousel .dot { width:10px; height:10px; border-radius:50%; border:0; background:rgba(255,255,255,0.7); cursor:pointer; padding:0; }
+      .wellness-carousel .dot.active { background:var(--accent); box-shadow:0 3px 8px rgba(0,0,0,0.18); }
+      @media (max-width:760px){
+        .wellness-carousel .slides img.carousel-image { height:200px; }
+        .wellness-carousel .carousel-btn { width:36px; height:36px; }
+      }
+    </style>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const container = document.querySelector('.wellness-carousel');
+        if (!container) return;
+        const slidesWrap = container.querySelector('.slides');
+        const slides = container.querySelectorAll('.slides img');
+        const prev = container.querySelector('.carousel-btn.prev');
+        const next = container.querySelector('.carousel-btn.next');
+        const dots = Array.from(container.querySelectorAll('.dot'));
+        let index = 0;
+
+        function update() {
+          slidesWrap.style.transform = 'translateX(' + (-index * 100) + '%)';
+          dots.forEach((d, i) => d.classList.toggle('active', i === index));
+        }
+
+        prev.addEventListener('click', () => {
+          index = (index - 1 + slides.length) % slides.length;
+          update();
+        });
+        next.addEventListener('click', () => {
+          index = (index + 1) % slides.length;
+          update();
+        });
+        dots.forEach(d => d.addEventListener('click', (e) => {
+          index = Number(e.currentTarget.dataset.index) || 0;
+          update();
+        }));
+
+        // Optional: keyboard support
+        container.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') prev.click();
+          if (e.key === 'ArrowRight') next.click();
+        });
+        // Make container focusable for keyboard
+        container.tabIndex = 0;
+
+        // Initialize
+        update();
+      });
+    </script>
   </figure>
   <h2>Wellness Through Coffee</h2>
   <p>Coffee has a powerful influence on your body and mind. In this section, we dive deep into how your brew can support:</p>
